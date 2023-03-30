@@ -16,9 +16,11 @@ def generate_testing_data(format: str, schema: StructType, enumerations: dict, d
     :return: A string containing the generated data in the specified format.
     """
 
+    # df = spark.range(dataset_size).withColumn("name", randn()).withColumn("age", (rand() * 100 + 1).cast(
+    #     IntegerType())).withColumn("gender", when(rand() < 0.33, "Male").when(rand() < 0.66, "Female").otherwise("Other"))
     # Create a DataFrame with random data
-    df = spark.range(dataset_size).withColumn("name", randn()).withColumn("age", (rand() * 100 + 1).cast(
-        IntegerType())).withColumn("gender", when(rand() < 0.33, "Male").when(rand() < 0.66, "Female").otherwise("Other"))
+    df = spark.range(0, dataset_size).withColumn('rand', rand(seed=42)).withColumn('randn', randn(seed=42))
+
 
     # Apply enumerations to the DataFrame
     for field in schema.fields:
@@ -33,6 +35,9 @@ def generate_testing_data(format: str, schema: StructType, enumerations: dict, d
                 df = df.withColumn(field.name, enum_expr.otherwise(enum_values[0]))
             else:
                 df = df.withColumn(field.name, randn(10))
+
+    # Drop rand and randn columns
+    df = df.drop("rand", "randn")
 
     # Write the DataFrame to the specified format and return the generated data
     # Write dataframe to CSV file
