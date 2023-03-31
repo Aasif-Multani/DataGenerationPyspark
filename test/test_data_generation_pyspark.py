@@ -6,6 +6,15 @@ from data_generation_pyspark import generate_testing_data
 
 
 class GenerateTestDataTest(unittest.TestCase):
+    """
+    This test file imports the necessary modules, defines a test class GenerateTestDataTest, and then defines several test methods with different scenarios:
+    test_generate_testing_data_csv: tests if the generated CSV data contains the expected header row
+    test_generate_testing_data_json: tests if the generated JSON data starts with the expected key
+    test_generate_testing_data_avro: tests if the generated AVRO data is None (since we can't easily check its contents)
+    test_generate_testing_data_invalid_format: tests if the method returns None when an invalid format is provided
+    test_generate_testing_data_write_csv: tests if the generated CSV file is written to disk when write parameter is True
+    The setUpClass and tearDownClass methods are run once before and after all tests, respectively, to start and stop a SparkSession. The setUp method is run before each test and sets up the default parameters for the method. The tearDown method is run after each test and deletes the generated CSV file. Finally, the main method runs all the tests.
+    """
     @classmethod
     def setUpClass(cls):
         cls.spark = SparkSession.builder.appName('testing').getOrCreate()
@@ -56,6 +65,7 @@ class GenerateTestDataTest(unittest.TestCase):
         self.write = True
         generate_testing_data(self.format, self.schema, self.enumerations, self.dataset_size, self.write)
         self.assertTrue(os.path.exists('output.csv'))
+
 
 if __name__ == '__main__':
     unittest.main()
