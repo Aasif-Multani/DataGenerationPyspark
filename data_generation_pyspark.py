@@ -1,18 +1,21 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import rand, randn, col, when
-from pyspark.sql.types import StructType, StructField, StringType, IntegerType
+from pyspark.sql.functions import rand, randn, when
+from pyspark.sql.types import StructType, StringType, IntegerType
+
 
 packages = "org.apache.spark:spark-avro_2.12:3.3.2"
 spark = SparkSession.builder.appName("DataGeneration").config("spark.jars.packages", packages).getOrCreate()
 # spark = SparkSession.builder.appName("DataGenerator").getOrCreate()
 
-def generate_testing_data(format: str, schema: StructType, enumerations: dict, dataset_size: int) -> str:
+
+def generate_testing_data(format: str, schema: StructType, enumerations: dict, dataset_size: int, write: bool= False) -> str:
     """
     Generates testing data based on the provided inputs.
     :param format: The format in which the data needs to be produced (CSV, JSON, or AVRO).
     :param schema: The schema for the output data (for CSV or JSON outputs).
     :param enumerations: A dictionary containing column names and their possible values (enumerations).
     :param dataset_size: The number of rows to generate in the output data.
+    :param write: To write the output data on disk.
     :return: A string containing the generated data in the specified format.
     """
 
@@ -44,8 +47,9 @@ def generate_testing_data(format: str, schema: StructType, enumerations: dict, d
     if format == "CSV":
         # Write the generated data to a CSV file
         #df.write.format("csv").mode('overwrite').option("header", "true").save("output.csv")
-        df.coalesce(1).write.format("csv").mode('overwrite').option("header", "true").option("quoteAll", "true").save(
-            "output.csv")
+        if write:
+                df.coalesce(1).write.format("csv").mode('overwrite').option("header", "true").option("quoteAll", "true").save(
+                "output.csv")
         print("CSV testing data generated successfully.")
         csv_data = df.toPandas().to_csv(index=False)
         return csv_data
@@ -53,7 +57,8 @@ def generate_testing_data(format: str, schema: StructType, enumerations: dict, d
     # Write dataframe to JSON file
     elif format == "JSON":
         #df.toJSON().saveAsTextFile("output.json")
-        df.coalesce(1).write.format("json").mode('overwrite').save("output.json")
+        if write:
+            df.coalesce(1).write.format("json").mode('overwrite').save("output.json")
         print("JSON testing data generated successfully.")
         json_data = df.toJSON().collect()
         return json_data
@@ -69,31 +74,3 @@ def generate_testing_data(format: str, schema: StructType, enumerations: dict, d
     else:
         print("Invalid format provided. Please provide either 'CSV', 'JSON', or 'AVRO'.")
         return None
-
-
-schema = StructType([
-    StructField('id', IntegerType(), nullable=False),
-    StructField('name', StringType(), nullable=False),
-    StructField('age', IntegerType(), nullable=False),
-    StructField('gender', StringType(), nullable=False)
-])
-
-enumerations = {
-    'name': ['John', 'Jane', 'Bob', 'Alice'],
-    'gender': ['male', 'female', 'other']
-}
-
-# Generate testing data in CSV format with the provided schema and enumerations
-csv_data = generate_testing_data(format="CSV", schema=schema, enumerations=enumerations, dataset_size=10)
-# Print the generated CSV data
-print(csv_data)
-
-# Generate testing data in JSON format with the provided schema and enumerations
-json_data = generate_testing_data(format="JSON", schema=schema, enumerations=enumerations, dataset_size=10)
-# Print the generated JSON data
-print(json_data)
-
-# Generate testing data in AVRO format with the provided schema and enumerations
-avro_data = generate_testing_data(format="AVRO", schema=schema, enumerations=enumerations, dataset_size=10)
-# Print the generated AVRO data
-print(avro_data)

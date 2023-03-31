@@ -1,0 +1,26 @@
+Positive test cases:
+Test generating CSV data with a valid schema, enumerations and dataset size.
+Test generating JSON data with a valid schema, enumerations and dataset size.
+Test generating AVRO data with a valid schema, enumerations and dataset size.
+Test generating CSV data with a schema containing only required fields and valid enumerations.
+Test generating JSON data with a schema containing only required fields and valid enumerations.
+Test generating AVRO data with a schema containing only required fields and valid enumerations.
+
+Negative test cases:
+Test generating data with an invalid format.
+Test generating data with an invalid schema.
+Test generating data with invalid enumerations.
+Test generating data with an invalid dataset size.
+Test generating data with a schema that contains fields that are not nullable.
+Test generating data with a schema that contains fields of invalid data types.
+
+Success test cases:
+Test that the method returns a string.
+Test that the generated data matches the specified schema.
+Test that the generated data matches the specified dataset size.
+
+Failed test cases:
+Test that the method raises an exception when the specified format is invalid.
+Test that the method raises an exception when the specified schema is invalid.
+Test that the method raises an exception when the specified enumerations are invalid.
+Test that the method raises an exception when the specified dataset size is invalid.
