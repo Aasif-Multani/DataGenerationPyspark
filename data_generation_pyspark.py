@@ -1,6 +1,8 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import rand, randn, when
-from pyspark.sql.types import StructType, StringType, IntegerType
+from pyspark.sql.functions import rand, randn, when, current_date, from_unixtime, array, lit, first
+from pyspark.sql.types import StructType, StringType, IntegerType, FloatType, DateType
+import datetime
+from datetime import date, timedelta
 
 
 packages = "org.apache.spark:spark-avro_2.12:3.3.2"
@@ -38,6 +40,17 @@ def generate_testing_data(format: str, schema: StructType, enumerations: dict, d
                 df = df.withColumn(field.name, enum_expr.otherwise(enum_values[0]))
             else:
                 df = df.withColumn(field.name, randn(10))
+        elif field.dataType == FloatType():
+            df = df.withColumn(field.name, (rand() * 100 + 1).cast(FloatType()))
+        elif field.dataType == DateType():
+            df = df.withColumn(field.name, current_date())
+        # elif field.dataType == DateType():
+        #     min_date = date(1900, 1, 1)
+        #     max_date = date.today()
+        #     delta = max_date - min_date
+        #     date_list = [min_date + timedelta(days=x) for x in range(delta.days)]
+        #     df = df.withColumn(field.name, from_unixtime(first(array([lit(x) for x in date_list])).cast(IntegerType()), 'yyyy-MM-dd'))
+
 
     # Drop rand and randn columns
     df = df.drop("rand", "randn")

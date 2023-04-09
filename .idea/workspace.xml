@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ded6ab00-66ef-4af8-a967-b242b5ca22ee" name="Changes" comment="test cases">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_data_generation_pyspark.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_data_generation_pyspark.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generation_pyspark.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generation_pyspark.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.avro/.part-00000-f7141506-14f2-4ddd-b0f9-e828a1e73d82-c000.avro.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.avro/part-00000-f7141506-14f2-4ddd-b0f9-e828a1e73d82-c000.avro" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +43,10 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/a.multani/Documents/python_pyspark_projects/Data_Generation_Pysark/Data_Generation_Pysark"
+    "last_opened_file_path": "/Users/a.multani/Documents/python_pyspark_projects/Data_Generation_Pysark/Data_Generation_Pysark",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -207,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680263158312</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="test cases">
+      <created>1680263657132</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680263657132</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
