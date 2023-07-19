@@ -5,7 +5,7 @@ import datetime
 from datetime import date, timedelta
 
 
-packages = "org.apache.spark:spark-avro_2.12:3.3.2"
+packages = "org.apache.spark:spark-avro_2.12:3.3.1"
 spark = SparkSession.builder.appName("DataGeneration").config("spark.jars.packages", packages).getOrCreate()
 # spark = SparkSession.builder.appName("DataGenerator").getOrCreate()
 

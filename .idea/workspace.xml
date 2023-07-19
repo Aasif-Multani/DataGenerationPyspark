@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ded6ab00-66ef-4af8-a967-b242b5ca22ee" name="Changes" comment="test cases">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ded6ab00-66ef-4af8-a967-b242b5ca22ee" name="Changes" comment="upload_to_">
+      <change afterPath="$PROJECT_DIR$/csv_to_json.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output.avro/.part-00000-ae6cb079-72ce-4fc6-a01f-f146c5af82bd-c000.avro.crc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output.avro/part-00000-ae6cb079-72ce-4fc6-a01f-f146c5af82bd-c000.avro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_generation_pyspark.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generation_pyspark.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.avro/.part-00000-f7141506-14f2-4ddd-b0f9-e828a1e73d82-c000.avro.crc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.avro/part-00000-f7141506-14f2-4ddd-b0f9-e828a1e73d82-c000.avro" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,17 +38,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/a.multani/Documents/python_pyspark_projects/Data_Generation_Pysark/Data_Generation_Pysark",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/a.multani/Documents/python_pyspark_projects/Data_Generation_Pysark/Data_Generation_Pysark&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -221,7 +221,35 @@
       <option name="project" value="LOCAL" />
       <updated>1680263657132</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="New schema and enum">
+      <created>1681075987915</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681075987915</updated>
+    </task>
+    <task id="LOCAL-00010" summary="New schema and enum">
+      <created>1681409390914</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681409390915</updated>
+    </task>
+    <task id="LOCAL-00011" summary="New schema and enum">
+      <created>1684153761031</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684153761031</updated>
+    </task>
+    <task id="LOCAL-00012" summary="upload_to_">
+      <created>1684344414018</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684344414018</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -229,6 +257,8 @@
     <MESSAGE value="Pyspark Application for Data Generation" />
     <MESSAGE value="sample sql for creating package" />
     <MESSAGE value="test cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="test cases" />
+    <MESSAGE value="New schema and enum" />
+    <MESSAGE value="upload_to_" />
+    <option name="LAST_COMMIT_MESSAGE" value="upload_to_" />
   </component>
 </project>

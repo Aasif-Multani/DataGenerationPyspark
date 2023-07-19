@@ -18,8 +18,8 @@ fake = Faker()
 schema = StructType([
     StructField('order', IntegerType(), nullable=False),
     StructField('ordercreatedt', DateType(), nullable=False),
-    StructField('Currentstatus', StringType(), nullable=True),
-    StructField('Componentstatus', StringType(), nullable=True)
+    StructField('Currentstatus', StringType(), nullable=False),
+    StructField('Componentstatus', StringType(), nullable=False)
 ])
 
 # Define the enumerations using constant data
@@ -43,9 +43,9 @@ enumerations = {
 
 
 # Generate testing data in CSV format with the provided schema and enumerations
-csv_data = generate_testing_data(format="CSV", schema=schema, enumerations=enumerations, dataset_size=10)
+#sv_data = generate_testing_data(format="CSV", schema=schema, enumerations=enumerations, dataset_size=10)
 # Print the generated CSV data
-print(csv_data)
+#print(csv_data)
 
 # Generate testing data in JSON format with the provided schema and enumerations
 # json_data = generate_testing_data(format="JSON", schema=schema, enumerations=enumerations, dataset_size=10)
@@ -53,6 +53,6 @@ print(csv_data)
 # print(json_data)
 
 # Generate testing data in AVRO format with the provided schema and enumerations
-# avro_data = generate_testing_data(format="AVRO", schema=schema, enumerations=enumerations, dataset_size=10)
+avro_data = generate_testing_data(format="AVRO", schema=schema, enumerations=enumerations, dataset_size=10)
 # Print the generated AVRO data
-# print(avro_data)
+print(avro_data)
