@@ -1,0 +1,22 @@
+{
+  "schema_1": {
+  "fields": [{ "name": "orderidentifier","type": "IntegerType", "nullable": true },
+    { "name": "airportcode", "type": "StringType", "nullable": true },
+    { "name": "Latitudenumber", "type": "FloatType", "nullable": true },
+    { "name": "Longitudenumber", "type": "TimestampType","nullable": true },
+    { "name": "airportname", "type": "StringType", "nullable": true },
+    { "name": "sourcesystemname", "type": "StringType", "nullable": true }
+  ],
+  "schema_name" : "cxl_cbts_chase_cxtwh_lookup_airport_codes_20230707"
+  },
+  "enumerations_1":{
+  "airportcode": ["ORD","CMH"],
+  "airportname" : ["Nashville Airport"],
+  "sourcesystemname" : ["cloyalty"]
+  },
+  "no_of_schema" : 1,
+  "primary_key_columns": {
+    "orderidentifier": 1000000
+  },
+  "dataset_size" : 1000
+}
